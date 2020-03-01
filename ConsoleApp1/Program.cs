@@ -12,6 +12,7 @@ namespace cw1
             var url = args.Length > 0 ? args[0] : "https://www.pja.edu.pl/";
             var httpClient = new HttpClient();
             var response = await httpClient.GetAsync(url);
+            httpClient.Dispose();
 
             if(response.IsSuccessStatusCode)
             {
@@ -24,6 +25,7 @@ namespace cw1
                 {
                     Console.WriteLine(match.ToString());
                 }
+
             } 
         }
     }
